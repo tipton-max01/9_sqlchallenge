@@ -54,6 +54,13 @@ INNER JOIN employees AS e ON de.emp_no = e.emp_no);
 --Query 5
 --5. List first name, last name, and sex for employees 
 --whose first name is "Hercules" and last names begin with "B."
+SELECT first_name,
+	last_name,
+	sex
+FROM employees
+WHERE first_name = 'Hercules'
+AND last_name LIKE 'B%';
+--Query 5 successful!--
 
 --Query 6
 --6. List all employees in the Sales department, 

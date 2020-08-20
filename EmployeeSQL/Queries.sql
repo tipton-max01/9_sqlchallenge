@@ -38,3 +38,15 @@ FROM (( dept_manager as dm
 INNER JOIN departments as dp ON dm.dept_no = dp.dept_no)
 INNER JOIN employees as e ON dm.emp_no = e.emp_no);
 --Success for Query 3! wow!
+
+--Query 4
+--4. List the department of each employee with the following information: 
+--employee number, last name, first name, and department name.
+SELECT e.emp_no,
+	e.last_name,
+	e.first_name,
+	dp.dept_name
+FROM ((dept_emp AS de
+INNER JOIN departments AS dp ON de.dept_no = dp.dept_no)
+INNER JOIN employees AS e ON de.emp_no = e.emp_no);
+--Success for Query 4. This is getting exciting.

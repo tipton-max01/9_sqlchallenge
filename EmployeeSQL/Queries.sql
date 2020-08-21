@@ -86,5 +86,3 @@ SELECT last_name, count(*)
 FROM employees
 GROUP BY last_name
 ORDER BY 2 DESC;
-
---* Create an image file of your ERD.

@@ -60,11 +60,19 @@ SELECT first_name,
 FROM employees
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
---Query 5 successful!--
 
 --Query 6
 --6. List all employees in the Sales department, 
---including their employee number, last name, first name, and department name.
+--including their employee number, last name, 
+--first name, and department name.
+SELECT e.emp_no,
+	e.last_name,
+	e.first_name,
+	dp.dept_name
+FROM ((dept_emp AS de
+INNER JOIN departments AS dp ON de.dept_no = dp.dept_no)
+INNER JOIN employees AS e ON de.emp_no = e.emp_no)
+WHERE dp.dept_name = 'Sales'
 
 --Query 7
 7--. List all employees in the Sales and Development departments, 
@@ -75,3 +83,9 @@ AND last_name LIKE 'B%';
 --i.e., how many employees share each last name.
 --ORDER BY 'frequency count of employee last names' DESC;
 
+
+--* Create an image file of your ERD.
+--* Create a `.sql` file of your table schemata.
+--* Create a `.sql` file of your queries.
+--* (Optional) Create a Jupyter Notebook of the bonus analysis.
+--* Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
